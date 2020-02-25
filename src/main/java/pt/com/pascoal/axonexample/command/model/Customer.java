@@ -25,8 +25,7 @@ Here the class Customer is the event sourced. It is our aggregate (its just like
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
     private String fullName;
     private String email;
     private Boolean isActive;
@@ -45,7 +44,7 @@ public class Customer {
         return accounts;
     }
 
-    public void notifyCustomerCreatedEvent() {
+    public void notifyCreatedOrUpdatedEvent() {
         log.info("applying event for customer created: {}", this.toString());
         AggregateLifecycle.apply(new CustomerCreatedEvent(this));
     }
