@@ -1,9 +1,6 @@
 package pt.com.pascoal.axonexample.command;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /*
@@ -12,46 +9,13 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
  * In other words, this annotation is required for Axon to determine the instance of the Aggregate that should handle the command. The annotation can be placed on either the field or the getter method. In this example, we chose to put it on the field.
  * */
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
 public class CreateCustomerCommand {
-    private Long id;
+    @TargetAggregateIdentifier
+    private String id;
     private String fullName;
     private String email;
     private Boolean isActive;
 
-    @TargetAggregateIdentifier
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Boolean getActive() {
-        return isActive;
-    }
-
-    public void setActive(Boolean active) {
-        isActive = active;
-    }
 }

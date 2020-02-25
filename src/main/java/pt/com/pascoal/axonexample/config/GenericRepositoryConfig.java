@@ -23,6 +23,7 @@ public class GenericRepositoryConfig {
         SimpleEntityManagerProvider entityManagerProvider = new SimpleEntityManagerProvider(entityManager);
         return GenericJpaRepository.builder(Customer.class)
                 .entityManagerProvider(entityManagerProvider)
+                .identifierConverter(String::toString)
                 .eventBus(eventBus)
                 .build();
     }

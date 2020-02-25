@@ -10,7 +10,7 @@ public final class CustomHttpUtil {
         //no instance of utility class my friend.
     }
 
-    public static HttpHeaders getResponseHeader(final Long id) {
+    public static HttpHeaders getResponseHeader(final String id) {
         HttpHeaders responseHeader = new HttpHeaders();
         URI newPEventUri = ServletUriComponentsBuilder
                 .fromCurrentRequest()

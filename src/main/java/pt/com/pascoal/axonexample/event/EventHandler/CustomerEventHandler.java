@@ -3,6 +3,7 @@ package pt.com.pascoal.axonexample.event.EventHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.eventhandling.gateway.EventGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pt.com.pascoal.axonexample.Respository.CustomerViewRepository;
